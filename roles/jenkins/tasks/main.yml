@@ -1,10 +1,11 @@
 - name: Create Multibranch Pipeline Jobs
-  ansible.builtin.include_tasks:
-    file: mjob.yml
-    loop: "{{ mjobs }}"
-
+  include_tasks: mjob.yml
+  with_items: "{{ mjobs }}"
+  loop_control:
+    loop_var: mjob
 
 - name: Create Single Branch Pipeline Jobs
-  ansible.builtin.include_tasks:
-    file: sjob.yml
-    loop: "{{ sjobs }}"
+  include_tasks: sjob.yml
+  with_items: "{{ sjobs }}"
+  loop_control:
+    loop_var: sjob
