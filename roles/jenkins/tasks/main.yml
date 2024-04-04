@@ -1,8 +1,6 @@
 - name: Create Multibranch Pipeline Jobs
   include_tasks: mjob.yml
   with_items: "{{ mjobs }}"
-  loop_control:
-    loop_var: mjob
 
 - name: Create Single Branch Pipeline Jobs
   include_tasks: sjob.yml
