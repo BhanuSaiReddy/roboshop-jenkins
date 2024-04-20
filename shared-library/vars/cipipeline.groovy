@@ -3,20 +3,23 @@ def call() {
         agent any
 
         stages {
-            stage{'compile code'}{
+            stage('compile code') { // Corrected syntax here
                 steps {
                     sh 'env'
                 }
             }
 
-            stage{'test'}{
+            stage('test') { // Corrected syntax here
                 steps {
                     echo 'hello world'
                 }
             }
 
-            stage{'Code quality'}{
+            stage('Code quality') { // Corrected syntax here
                 steps {
                     echo 'hello world'
                 }
             }
+        }
+    }
+}
