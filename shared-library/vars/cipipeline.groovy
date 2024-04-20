@@ -1,3 +1,11 @@
+def info(message) {
+    echo "INFO: ${message}"
+}
+
+def warning(message) {
+    echo "WARNING: ${message}"
+}
+
 def call() {
     pipeline {
         agent any
@@ -7,8 +15,8 @@ def call() {
                 steps {
                     echo 'hello world'
                     script {
-                        echo 'Starting'
-                        warn 'Nothing to do!'
+                        info 'Starting'
+                        warning 'Nothing to do!'
                     } // Closing the script block
                 }
             }
