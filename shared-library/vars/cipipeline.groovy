@@ -7,8 +7,8 @@ def call() {
                 steps {
                     echo 'hello world'
                     script {
-                        info 'Starting'
-                        warning 'Nothing to do'
+                        echo 'Starting'
+                        warning 'Nothing to do!'
                     } // Closing the script block
                 }
             }
