@@ -8,7 +8,7 @@ def call() {
                     echo 'hello world'
                     script {
                         echo 'Starting'
-                        warning 'Nothing to do!'
+                        warn 'Nothing to do!'
                     } // Closing the script block
                 }
             }
