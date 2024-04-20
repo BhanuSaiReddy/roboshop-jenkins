@@ -6,7 +6,6 @@ def call() {
             stage('Compile code') {
                 steps {
                     sh 'env'
-                    } // Closing the script block
                 }
             }
 
