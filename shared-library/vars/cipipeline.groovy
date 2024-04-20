@@ -3,19 +3,35 @@ def call() {
         agent any
 
         stages {
-            stage('Compile Code') { // Corrected syntax here
+            stage('Compile') {
                 steps {
-                    sh 'env'
+                    echo 'hello world'
+                    script {
+                        info 'Starting'
+                        warning 'Nothing to do'
+                    } // Closing the script block
                 }
             }
 
-            stage('Test') { // Corrected syntax here
+            stage('Test') {
                 steps {
                     echo 'hello world'
                 }
             }
 
-            stage('Code Quality') { // Corrected syntax here
+            stage('Code Quality') {
+                steps {
+                    echo 'hello world'
+                }
+            }
+
+            stage('Code Security') {
+                steps {
+                    echo 'hello world'
+                }
+            }
+
+            stage('App Deploy') {
                 steps {
                     echo 'hello world'
                 }
