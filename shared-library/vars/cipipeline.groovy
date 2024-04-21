@@ -10,12 +10,23 @@ def call() {
             }
 
             stage('Test') {
+                when {
+                    allof {
+                        expression { env.BRANCH_NAME != null }
+                        expression { env.TAG_NAME == null }
+                    }
+
                 steps {
                     echo 'hello world'
                 }
             }
 
             stage('Code Quality') {
+                when {
+                    allof {
+                    expression { env.BRANCH_NAME != null }
+                        expression { env.TAG_NAME == null }
+                }
                 steps {
                     echo 'hello world'
                 }
