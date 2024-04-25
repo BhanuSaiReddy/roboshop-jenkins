@@ -2,7 +2,7 @@ def call() {
 
     node('workstation') {
         stage('Compile code') {
-            comman.compile
+            common.compile
         }
             print "hello"
         }
