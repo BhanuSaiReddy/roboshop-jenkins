@@ -1,24 +1,22 @@
 def call() {
     node('Workstation') {
         stage('Compile code') {
-            common.compile
+            common.compile()
         }
-        echo "hello"
-    }
 
     stage('test') {
-        echo "hello"
+        print "hello"
     }
 
     stage('Compile Quality') {
-        echo "hello"
+        print "hello"
     }
 
     stage('Code security') {
-        echo "hello"
+        print "hello"
     }
 
     stage('Release') {
-        echo "hello"
+        print "hello"
     }
 }
