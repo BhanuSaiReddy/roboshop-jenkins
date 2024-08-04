@@ -1,22 +1,33 @@
 def call() {
-    node('Workstation') {
-        stage('Compile code') {
-            common.compile()
+    pipeline {
+        agent any
+
+        stages {
+            stage('Compile Code') {
+                steps {
+                    sh 'env'
+                }
+            }
+
+            stage('Test') {
+                steps {
+                    echo 'Hello World'
+                }
+            }
+
+            stage('Code Quality') {
+                steps {
+                    echo 'Hello World'
+                }
+            }
+
+            stage('Code Security') {
+                when {
+                    // Add conditions here if needed
+                    expression { return true } // Placeholder to always execute this stage
+                }
+                steps {
+                    echo 'Hello World'
+                }
+            }
         }
-
-    stage('test') {
-        print "hello"
-    }
-
-    stage('Compile Quality') {
-        print "hello"
-    }
-
-    stage('Code security') {
-        print "hello"
-    }
-
-    stage('Release') {
-        print "hello"
-    }
-}
