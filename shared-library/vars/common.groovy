@@ -1,21 +1,17 @@
 def compile() {
     if (env.codeType == "maven") {
-        println "maven"
-        // Add maven compile steps here
+        print "maven"
     }
 
     if (env.codeType == "nodejs") {
-        println "nodejs"
-        // Add nodejs compile steps here
+        print "nodejs"
     }
 
     if (env.codeType == "python") {
-        println "Python"
-        // Add python compile steps here
+        print "Python"
     }
 
     if (env.codeType == "static") {
-        println "static"
-        // Add static compile steps here
+        print "static"
     }
 }

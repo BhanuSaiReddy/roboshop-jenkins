@@ -1,26 +1,21 @@
 def call() {
+
     node('workstation') {
-        stage('Compile Code') {
-            echo 'Compiling code...'
-            // Load the compile.groovy file and call the compile function
-            load 'path/to/compile.groovy'
-            compile()
+        stage('compile Code') {
+            common.compile()
         }
         stage('Test') {
-            echo 'Running tests...'
-            // Add your test commands here
+            print 'hello'
         }
-        stage('Code Quality') {
-            echo 'Running code quality checks...'
-            // Add your code quality analysis commands here
+        stage('Code  Quality') {
+            print 'hello'
         }
+
         stage('Code Security') {
-            echo 'Running code security checks...'
-            // Add your code security scan commands here
+            print 'hello'
         }
         stage('Release') {
-            echo 'Releasing the application...'
-            // Add your release steps here
+            print 'Hello'
         }
     }
 }
