@@ -1,17 +1,18 @@
 def compile() {
-    if (env.codeType == "maven") {
-        print "maven"
-    }
-
-    if (env.codeType == "nodejs") {
-        print "nodejs"
-    }
-
-    if (env.codeType == "python") {
-        print "Python"
-    }
-
-    if (env.codeType == "static") {
-        print "static"
+    switch (env.codeType) {
+        case "maven":
+            println "maven"
+            break
+        case "nodejs":
+            println "nodejs"
+            break
+        case "python":
+            println "Python"
+            break
+        case "static":
+            println "static"
+            break
+        default:
+            println "Unknown code type"
     }
 }
