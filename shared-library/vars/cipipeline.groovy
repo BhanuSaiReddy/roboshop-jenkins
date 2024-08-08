@@ -1,18 +1,20 @@
 def call() {
-
-    node('workstation')
-        sh "find . | sed -e '1d' |xargs rm -rf "
-        git branch: 'main', url:'https://github.com/BhanuSaiReddy/${component}'
-        stage('compile Code') {
+    node('workstation') {
+        stage('Cleanup') {
+            sh "find . | sed -e '1d' | xargs rm -rf"
+        }
+        stage('Checkout') {
+            git branch: 'main', url: "https://github.com/BhanuSaiReddy/${component}"
+        }
+        stage('Compile Code') {
             common.compile()
         }
         stage('Test') {
             print 'hello'
         }
-        stage('Code  Quality') {
+        stage('Code Quality') {
             print 'hello'
         }
-
         stage('Code Security') {
             print 'hello'
         }
