@@ -4,7 +4,7 @@ def call() {
             sh "find . | sed -e '1d' | xargs rm -rf"
         }
         stage('Checkout') {
-            git branch: 'main', url: "https://github.com/BhanuSaiReddy/${component}"
+            git branch: "$BRANCH_NAME" , url: "https://github.com/BhanuSaiReddy/${component}"
         }
         stage('Compile Code') {
             common.compile()
