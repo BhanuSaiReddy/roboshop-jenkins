@@ -1,34 +1,34 @@
 def call() {
-    pipeline {
-        agent any
-
-        stages {
-            stage('Compile Code') {
-                steps {
-                    sh 'env'
-                }
+    node('workstation') {
+        stage('Compile Code') {
+            steps {
+                echo 'Compiling code...'
+                // Replace with your actual compile steps
+                // common.compile()
             }
-
-            stage('Test') {
-                steps {
-                    echo 'Hello World'
-                }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Add your test commands here
             }
-
-            stage('Code Quality') {
-                steps {
-                    echo 'Hello World'
-                }
+        }
+        stage('Code Quality') {
+            steps {
+                echo 'Running code quality checks...'
+                // Add your code quality analysis commands here
             }
-
-            stage('Code Security') {
-                when {
-                    // Add conditions here if needed
-                    expression { return true } // Placeholder to always execute this stage
-                }
-                steps {
-                    echo 'Hello World'
-                }
+        }
+        stage('Code Security') {
+            steps {
+                echo 'Running code security checks...'
+                // Add your code security scan commands here
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing the application...'
+                // Add your release steps here
             }
         }
     }
