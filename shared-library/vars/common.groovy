@@ -1,6 +1,8 @@
 def compile() {
     if (env.codeType == "python" || env.codeType == "static") {
-        // Add logic if needed
+        echo "Return, Do not need Compilation"
+        return
+
     }
 
     stage('Compile Code') {
