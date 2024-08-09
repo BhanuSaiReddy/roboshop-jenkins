@@ -15,24 +15,22 @@ def call() {
             git branch: "$BRANCH_NAME", url: "https://github.com/BhanuSaiReddy/${component}"
         }
 
-        stage('Compile Code') {
+        if(env.TAG_NAME ==~ ".*") {
             common.compile()
+            common.release()
+        } else {
+            if(env.BRANCH_NAME == "main") {
+                common.compile()
+                common.test()
+                common.codeQuality()
+                common.codeSecurity()
+            } else {
+                common.compile()
+                common.test()
+                common.codeQuality()
+            }
         }
 
-        stage('Test') {
-            print 'hello'
-        }
-
-        stage('Code Quality') {
-            print 'hello'
-        }
-
-        stage('Code Security') {
-            print 'hello'
-        }
-
-        stage('Release') {
-            print 'Hello'
-        }
     }
+
 }
